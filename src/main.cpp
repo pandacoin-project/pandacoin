@@ -828,13 +828,13 @@ uint256 static GetOrphanRoot(const CBlock* pblock)
 
 int64 static GetBlockValue(int nHeight, int64 nFees)
 {
-    int64 nSubsidy = 500 * COIN;
+    int64 nSubsidy = 1 * COIN;
 
     return nSubsidy + nFees;
 }
 
-static const int64 nTargetTimespan = 5 * 24 * 60 * 60; // PandaCoin: 5 days
-static const int64 nTargetSpacing = 120; // PandaCoin: 2 minutes blocks
+static const int64 nTargetTimespan = 1 * 24 * 60 * 60; // PandaCoin: 1 days
+static const int64 nTargetSpacing = 60 * 60; // PandaCoin: 1 hour block
 static const int64 nInterval = nTargetTimespan / nTargetSpacing;
 
 // Thanks: Balthazar for suggesting the following fix
@@ -2021,7 +2021,7 @@ bool LoadBlockIndex(bool fAllowNew)
         if (fTestNet)
         {
             block.nTime    = 1387988107;
-            block.nNonce   = 0;
+            block.nNonce   = 410917;
         }
 
         //// debug print
